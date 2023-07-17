@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 32px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    transition-duration: 1.5s;
+}
+
+.theme1 {
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-background-1: hsl(225, 21%, 49%);
+    --key-shadow-1: hsl(224, 28%, 35%);
+    --toggle-color: hsl(6, 63%, 50%);
+    --key-shadow-2: hsl(6, 70%, 34%);
+    --key-backgorund-2: hsl(30, 25%, 89%);
+    --key-shadow-3: hsl(28, 16%, 65%);
+    --text-color-1: hsl(221, 14%, 31%);
+    --text-color-2: hsl(0, 0%, 100%);
+    --text-color-3: hsl(0, 0%, 100%);
+    --text-color-4: hsl(0, 0%, 100%);
+    --justify-content: start; 
+}
+
+.theme2 {
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-background-1: hsl(185, 42%, 37%);
+    --key-shadow-1: hsl(185, 58%, 25%);
+    --toggle-color: hsl(25, 98%, 40%);
+    --key-shadow-2: hsl(25, 99%, 27%);
+    --key-backgorund-2: hsl(45, 7%, 89%);
+    --key-shadow-3: hsl(35, 11%, 61%);
+    --text-color-1: hsl(60, 10%, 19%);
+    --text-color-2: hsl(0, 0%, 100%);
+    --text-color-3: hsl(0, 0%, 100%);
+    --text-color-4: hsl(60, 10%, 19%);
+    --justify-content: center; 
+}
+
+.theme3 {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-background-1: hsl(281, 89%, 26%);
+    --key-shadow-1: hsl(285, 91%, 52%);
+    --toggle-color: hsl(176, 100%, 44%);
+    --key-shadow-2: hsl(177, 92%, 70%);
+    --key-backgorund-2: hsl(268, 47%, 21%);
+    --key-shadow-3: hsl(290, 70%, 36%);
+    --text-color-1: hsl(52, 100%, 62%);
+    --text-color-2: hsl(0, 0%, 100%);
+    --text-color-3: hsl(198, 20%, 13%);
+    --text-color-4: hsl(52, 100%, 62%);
+    --justify-content: end; 
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-background);
+    height: 100%;
+    display: grid;
+}
+
+main {
+    max-width: 500px;
+    width: 90%;
+    display: grid;
+    gap: 1rem;
+    margin: auto;
+}
+
+#top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+h2 {
+    font-size: 0.5rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 0.6rem;
+}
+
+.theme, .theme > div, .theme > div > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.theme > div {
+    flex-direction: column;
+} 
+
+#toggle {
+    width: 100px;
+    height: 30px;
+    background-color: var(--toggle-background);
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: var(--justify-content);
+    align-items: center;
+    padding: 5px 6px;
+}
+
+#toggle-dot {
+    background-color: var(--toggle-color);
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+#result {
+    background-color: var(--screen-background);
+    text-align: end;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+#num-pad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.7rem;
+    padding: 1rem;
+    background-color: var(--toggle-background);
+}
+
+.reset, .eaquals {
+    grid-column: span 2;
+}
+
+section {
+    border-radius: 10px;
+}
+
+#num-pad button {
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    padding-top: 5px;
+    background-color: var(--key-backgorund-2);
+    color: var(--text-color-1);
+    box-shadow: 0 4px var(--key-shadow-3);
+    transition-duration: 0.2s;
+}
+
+#num-pad button:active {
+    scale: 0.9;
+}
+
+#num-pad > .del, #num-pad > .reset {
+    background-color: var(--key-background-1);
+    font-size: 0.9rem;
+    color: var(--text-color-2);
+    box-shadow: 0 4px var(--key-shadow-1);
+}
+
+#num-pad > .eaquals {
+    background-color: var(--toggle-color);
+    color: var(--text-color-3);
+    font-size: 0.7rem;
+    box-shadow: 0 4px var(--key-shadow-2);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1 , h2, h3 , #result {
+    color: var(--text-color-4);
+}
+
+/* prefers-color-scheme is checked inside js */
